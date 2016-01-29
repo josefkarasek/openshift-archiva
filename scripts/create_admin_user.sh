@@ -1,6 +1,6 @@
 #!/bin/bash
 
-until curl -output /dev/null --silent --head --fail localhost:8080 > /dev/null; do
+until curl --silent --head --fail localhost:8080 > /dev/null; do
 	sleep 2
 done
 

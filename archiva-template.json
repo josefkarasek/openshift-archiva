@@ -1,0 +1,342 @@
+{
+    "kind": "Template",
+    "apiVersion": "v1",
+    "metadata": {
+        "annotations": {
+            "description": "Application template for Apache Archiva maven proxy.",
+            "tags": "maven,proxy,javaee,java",
+            "version": "0.1"
+        },
+        "name": "apache-archiva"
+    },
+    "labels": {
+        "template": "apache-archiva"
+    },
+    "parameters": [
+         {
+            "description": "The name for the application.",
+            "name": "APPLICATION_NAME",
+            "value": "archiva",
+            "required": true
+        },
+        {
+            "description": "The password for the 'admin' account.",
+            "name": "ADMIN_PASSWORD",
+            "from": "[a-zA-Z0-9]{8}",
+            "generate": "expression",
+            "required": true
+        },
+        {
+            "description": "The email address for the 'admin' account.",
+            "name": "ADMIN_EMAIL",
+            "value": "admin@example.com",
+            "required": true
+        },
+        {
+            "description": "Archiva service hostname.",
+            "name": "HOSTNAME",
+            "value": "http://localhost",
+            "required": true
+        },
+        {
+            "description": "Archiva service port.",
+            "name": "PORT",
+            "value": "9091",
+            "required": true
+        },
+        {
+            "description": "Host and port.",
+            "name": "APPLICATION_URL",
+            "value": "${HOSTNAME}:${PORT}",
+            "required": true
+        },
+        {
+            "description": "A virtual repository that groups referenced repositories to one.",
+            "name": "REPOSITORY_GROUP",
+            "value": "group",
+            "required": true
+        },
+        {
+            "description": "A remote repository reference. At least one must be configured. By default Maven Central.",
+            "name": "REMOTE1",
+            "value": "https://repo.maven.apache.org/maven2",
+            "required": true
+        },
+        {
+            "description": "A remote repository reference.",
+            "name": "REMOTE2",
+            "value": "",
+            "required": false
+        },
+        {
+            "description": "A remote repository reference.",
+            "name": "REMOTE3",
+            "value": "",
+            "required": false
+        },
+        {
+            "description": "A remote repository reference.",
+            "name": "REMOTE4",
+            "value": "",
+            "required": false
+        },
+        {
+            "description": "A remote repository reference.",
+            "name": "REMOTE5",
+            "value": "",
+            "required": false
+        },
+        {
+            "description": "A remote repository reference.",
+            "name": "REMOTE6",
+            "value": "",
+            "required": false
+        },
+        {
+            "description": "A remote repository reference.",
+            "name": "REMOTE7",
+            "value": "",
+            "required": false
+        },
+        {
+            "description": "A remote repository reference.",
+            "name": "REMOTE8",
+            "value": "",
+            "required": false
+        },
+        {
+            "description": "A remote repository reference.",
+            "name": "REMOTE9",
+            "value": "",
+            "required": false
+        },
+        {
+            "description": "A remote repository reference.",
+            "name": "REMOTE10",
+            "value": "",
+            "required": false
+        },
+        {
+            "description": "A remote repository reference.",
+            "name": "REMOTE11",
+            "value": "",
+            "required": false
+        },
+        {
+            "description": "A remote repository reference.",
+            "name": "REMOTE12",
+            "value": "",
+            "required": false
+        },
+        {
+            "description": "Optional space for extra remote repository referencies. Enter values as comma delimited list.",
+            "name": "EXTRA_REMOTES",
+            "value": "",
+            "required": false
+        },
+        {
+            "description": "Namespace in which the ImageStreams for images are installed. These ImageStreams are normally installed in the openshift namespace. You should only need to modify this if you've installed the ImageStreams in a different namespace/project.",
+            "name": "IMAGE_STREAM_NAMESPACE",
+            "value": "openshift",
+            "required": true
+        }
+    ],
+    "objects": [
+        {
+            "kind": "Service",
+            "apiVersion": "v1",
+            "spec": {
+                "ports": [
+                    {
+                        "port": "${PORT}",
+                        "targetPort": "${PORT}"
+                    }
+                ],
+                "selector": {
+                    "deploymentConfig": "${APPLICATION_NAME}"
+                }
+            },
+            "metadata": {
+                "name": "${APPLICATION_NAME}",
+                "labels": {
+                    "application": "${APPLICATION_NAME}"
+                }
+            },
+                "annotations": {
+                    "description": "The maven proxy's port."
+                }
+        },
+        {
+            "kind": "Service",
+            "apiVersion": "v1",
+            "spec": {
+                "ports": [
+                    {
+                        "port": 8080,
+                        "targetPort": 8080
+                    }
+                ],
+                "selector": {
+                    "deploymentConfig": "${APPLICATION_NAME}-web"
+                },
+                "annotations": {
+                    "description": "The web management's port."
+                }
+            },
+            "metadata": {
+                "name": "${APPLICATION_NAME}",
+                "labels": {
+                    "application": "${APPLICATION_NAME}"
+                }
+            }
+        },
+        {
+            "kind": "DeploymentConfig",
+            "apiVersion": "v1",
+            "metadata": {
+                "name": "${APPLICATION_NAME}",
+                "labels": {
+                    "application": "${APPLICATION_NAME}"
+                }
+            },
+            "spec": {
+                "strategy": {
+                    "type": "Recreate"
+                },
+                "triggers": [
+                    {
+                        "type": "ImageChange",
+                        "imageChangeParams": {
+                            "automatic": true,
+                            "containerNames": [
+                                "${APPLICATION_NAME}"
+                            ],
+                            "from": {
+                                "kind": "ImageStreamTag",
+                                "namespace": "${IMAGE_STREAM_NAMESPACE}",
+                                "name": "archiva-2.2.0:latest"
+                            }
+                        }
+                    },
+                    {
+                        "type": "ConfigChange"
+                    }
+                ],
+                "replicas": 1,
+                "selector": {
+                    "deploymentConfig": "${APPLICATION_NAME}"
+                },
+                "template": {
+                    "metadata": {
+                        "name": "${APPLICATION_NAME}",
+                        "labels": {
+                            "deploymentConfig": "${APPLICATION_NAME}",
+                            "application": "${APPLICATION_NAME}"
+                        }
+                    },
+                    "spec": {
+                        "terminationGracePeriodSeconds": 60,
+                        "containers": [
+                            {
+                                "name": "${APPLICATION_NAME}",
+                                "image": "archiva-2.2.0:latest",
+                                "imagePullPolicy": "Always",
+                                "readinessProbe": {
+                                    "exec": {
+                                        "command": [
+                                            "/bin/bash",
+                                            "-c",
+                                            "/opt/archiva/bin/scripts/readinessProbe.sh"
+                                        ]
+                                    }
+                                },
+                                "ports": [
+                                    {
+                                        "name": "archiva web interface",
+                                        "containerPort": 8080,
+                                        "protocol": "TCP"
+                                    },
+                                    {
+                                        "name": "archiva maven proxy interface",
+                                        "containerPort": 9091,
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "env": [
+                                    {
+                                        "name": "ADMIN_PASSWORD",
+                                        "value": "${ADMIN_PASSWORD}"
+                                    },
+                                    {
+                                        "name": "ADMIN_EMAIL",
+                                        "value": "${ADMIN_EMAIL}"
+                                    },
+                                    {
+                                        "name": "APPLICATION_URL",
+                                        "value": "${HOSTNAME}:${PORT}"
+                                    },
+                                    {
+                                        "name": "REPOSITORY_GROUP",
+                                        "value": "${REPOSITORY_GROUP}"
+                                    },
+                                    {
+                                        "name": "REMOTE1",
+                                        "value": "${REMOTE1}"
+                                    },
+                                    {
+                                        "name": "REMOTE2",
+                                        "value": "${REMOTE2}"
+                                    },
+                                    {
+                                        "name": "REMOTE3",
+                                        "value": "${REMOTE3}"
+                                    },
+                                    {
+                                        "name": "REMOTE4",
+                                        "value": "${REMOTE4}"
+                                    },
+                                    {
+                                        "name": "REMOTE5",
+                                        "value": "${REMOTE5}"
+                                    },
+                                    {
+                                        "name": "REMOTE6",
+                                        "value": "${REMOTE6}"
+                                    },
+                                    {
+                                        "name": "REMOTE7",
+                                        "value": "${REMOTE7}"
+                                    },
+                                    {
+                                        "name": "REMOTE8",
+                                        "value": "${REMOTE8}"
+                                    },
+                                    {
+                                        "name": "REMOTE9",
+                                        "value": "${REMOTE9}"
+                                    },
+                                    {
+                                        "name": "REMOTE10",
+                                        "value": "${REMOTE10}"
+                                    },
+                                    {
+                                        "name": "REMOTE11",
+                                        "value": "${REMOTE11}"
+                                    },
+                                    {
+                                        "name": "REMOTE12",
+                                        "value": "${REMOTE12}"
+                                    },
+                                    {
+                                        "name": "EXTRA_REMOTES",
+                                        "value": "${EXTRA_REMOTES}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}
