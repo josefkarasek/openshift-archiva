@@ -33,27 +33,14 @@
             "required": true
         },
         {
-            "description": "Archiva service hostname.",
-            "name": "HOSTNAME",
-            "value": "http://localhost",
-            "required": true
-        },
-        {
-            "description": "Archiva service port.",
-            "name": "PORT",
-            "value": "9091",
-            "required": true
-        },
-        {
             "description": "Host and port.",
             "name": "APPLICATION_URL",
-            "value": "${HOSTNAME}:${PORT}",
+            "value": "http://localhost:9091",
             "required": true
         },
         {
             "description": "A virtual repository that groups referenced repositories to one.",
             "name": "REPOSITORY_GROUP",
-            "value": "group",
             "required": true
         },
         {
@@ -148,8 +135,8 @@
             "spec": {
                 "ports": [
                     {
-                        "port": "${PORT}",
-                        "targetPort": "${PORT}"
+                        "port": 9091,
+                        "targetPort": 9091
                     }
                 ],
                 "selector": {
@@ -177,14 +164,14 @@
                     }
                 ],
                 "selector": {
-                    "deploymentConfig": "${APPLICATION_NAME}-web"
+                    "deploymentConfig": "${APPLICATION_NAME}"
                 },
                 "annotations": {
                     "description": "The web management's port."
                 }
             },
             "metadata": {
-                "name": "${APPLICATION_NAME}",
+                "name": "${APPLICATION_NAME}-web",
                 "labels": {
                     "application": "${APPLICATION_NAME}"
                 }
@@ -241,23 +228,15 @@
                                 "name": "${APPLICATION_NAME}",
                                 "image": "archiva-2.2.0:latest",
                                 "imagePullPolicy": "Always",
-                                "readinessProbe": {
-                                    "exec": {
-                                        "command": [
-                                            "/bin/bash",
-                                            "-c",
-                                            "/opt/archiva/bin/scripts/readinessProbe.sh"
-                                        ]
-                                    }
-                                },
+                                
                                 "ports": [
                                     {
-                                        "name": "archiva web interface",
+                                        "name": "archiva-web",
                                         "containerPort": 8080,
                                         "protocol": "TCP"
                                     },
                                     {
-                                        "name": "archiva maven proxy interface",
+                                        "name": "archiva-proxy",
                                         "containerPort": 9091,
                                         "protocol": "TCP"
                                     }
@@ -273,7 +252,7 @@
                                     },
                                     {
                                         "name": "APPLICATION_URL",
-                                        "value": "${HOSTNAME}:${PORT}"
+                                        "value": "${APPLICATION_URL}"
                                     },
                                     {
                                         "name": "REPOSITORY_GROUP",

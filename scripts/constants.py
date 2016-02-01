@@ -20,13 +20,13 @@ REMOTE_REPOSITORIES="""
             <downloadRemoteIndex>false</downloadRemoteIndex>
             <downloadRemoteIndexOnStartup>false</downloadRemoteIndexOnStartup>
             <id>$REPO_ID</id>
-            <name>$REPO_ID</name>
+            <name>$REPO_NAME</name>
         </remoteRepository>
 """
 
 PROXY_CONNECTORS="""
         <proxyConnector>
-            <order>$TARGET_REPO_ID</order>
+            <order>$ORDER</order>
             <sourceRepoId>internal</sourceRepoId>
             <targetRepoId>$TARGET_REPO_ID</targetRepoId>
             <policies>

@@ -13,6 +13,7 @@ ADD apache-archiva-2.2.0 /opt/archiva
 ADD scripts /opt/archiva/bin/scripts
 
 RUN chown -R archiva:archiva /opt/archiva
+RUN chmod 777 -R /opt/archiva
 
 USER archiva
 

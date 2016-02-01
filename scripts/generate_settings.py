@@ -22,9 +22,15 @@ def remote_repositories(content):
   temp = '    <remoteRepositories>\n'
   for i in range(12):
     try:
+      print "Remote" + str(i+1) + ": " + os.environ['REMOTE' + str(i+1)]
       var_name = os.environ['REMOTE' + str(i+1)]
+      if var_name == "":
+        print "Skipping: REMOTE" + str(i+1)
+        continue
+      print "Creating: REMOTE" + str(i+1)
       remote_repository = constants.REMOTE_REPOSITORIES.replace('$URL', var_name)
       remote_repository = remote_repository.replace('$REPO_ID', str(i+1))
+      remote_repository = remote_repository.replace('$REPO_NAME', str(i+1))
       temp += remote_repository
       remote_repository_id_list.append(i+1)
     except KeyError as e:
@@ -32,9 +38,14 @@ def remote_repositories(content):
 
   try:
     extras = os.environ['EXTRA_REMOTES'].split(',')
+    if len(extras) == 1:
+      print "No extra remote repositories."
+      temp += '\n    </remoteRepositories>'
+      return content.replace('$REMOTE_REPOSITORIES', temp)
     for j in range(len(extras)):
       remote_repository = constants.REMOTE_REPOSITORIES.replace('$URL', str.strip(extras[j]))
-      remote_repository = remote_repository.replace('$REPO_ID', str(i+j+2))
+      remote_repository = remote_repository.replace('$REPO_ID', str(i+1))
+      remote_repository = remote_repository.replace('$REPO_NAME', str(i+1))
       temp += remote_repository
       remote_repository_id_list.append(i+j+2)
   except KeyError as e:
@@ -48,7 +59,8 @@ def proxy_connectors(content):
   global remote_repository_id_list
   temp = '    <proxyConnectors>\n'
   for i in remote_repository_id_list:
-    proxy_connector = constants.PROXY_CONNECTORS.replace('$TARGET_REPO_ID', str(i))
+    proxy_connector = constants.PROXY_CONNECTORS.replace('$ORDER', str(i))
+    proxy_connector = proxy_connector.replace('$TARGET_REPO_ID', str(i))
     temp += proxy_connector
 
   temp += '\n    </proxyConnectors>'
