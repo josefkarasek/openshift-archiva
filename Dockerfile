@@ -12,9 +12,9 @@ RUN groupadd -r archiva -g 433 && useradd -u 431 -r -g archiva -d /opt/archiva -
 ADD apache-archiva-2.2.0 /opt/archiva
 ADD scripts /opt/archiva/bin/scripts
 
-RUN chown -R archiva:archiva /opt/archiva
-RUN chmod 777 -R /opt/archiva
+RUN chown -R archiva:0 /opt/archiva
+RUN chmod 774 -R /opt/archiva
 
-USER archiva
+USER 431
 
 CMD ["/opt/archiva/bin/scripts/launch_archiva.sh"]
