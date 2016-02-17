@@ -20,7 +20,7 @@
             "required": true
         },
         {
-            "description": "The password for the 'admin' account.",
+            "description": "The password for the 'admin' account. At least 8 characters. Must contain at least one number.",
             "name": "ADMIN_PASSWORD",
             "from": "[a-zA-Z0-9]{8}",
             "generate": "expression",
@@ -33,9 +33,9 @@
             "required": true
         },
         {
-            "description": "Host and port.",
+            "description": "Host and port. Modify only port in case you have changed Jetty configuration.",
             "name": "APPLICATION_URL",
-            "value": "http://localhost:9091",
+            "value": "http://archiva:8080",
             "required": true
         },
         {
@@ -135,30 +135,6 @@
             "spec": {
                 "ports": [
                     {
-                        "port": 9091,
-                        "targetPort": 9091
-                    }
-                ],
-                "selector": {
-                    "deploymentConfig": "${APPLICATION_NAME}"
-                }
-            },
-            "metadata": {
-                "name": "${APPLICATION_NAME}",
-                "labels": {
-                    "application": "${APPLICATION_NAME}"
-                }
-            },
-                "annotations": {
-                    "description": "The maven proxy's port."
-                }
-        },
-        {
-            "kind": "Service",
-            "apiVersion": "v1",
-            "spec": {
-                "ports": [
-                    {
                         "port": 8080,
                         "targetPort": 8080
                     }
@@ -171,7 +147,7 @@
                 }
             },
             "metadata": {
-                "name": "${APPLICATION_NAME}-web",
+                "name": "${APPLICATION_NAME}",
                 "labels": {
                     "application": "${APPLICATION_NAME}"
                 }
@@ -231,13 +207,8 @@
                                 
                                 "ports": [
                                     {
-                                        "name": "archiva-web",
+                                        "name": "archiva",
                                         "containerPort": 8080,
-                                        "protocol": "TCP"
-                                    },
-                                    {
-                                        "name": "archiva-proxy",
-                                        "containerPort": 9091,
                                         "protocol": "TCP"
                                     }
                                 ],

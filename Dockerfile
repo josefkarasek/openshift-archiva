@@ -17,4 +17,6 @@ RUN chmod 774 -R /opt/archiva
 
 USER 431
 
+WORKDIR $ARCHIVA_HOME
+
 CMD ["/opt/archiva/bin/scripts/launch_archiva.sh"]

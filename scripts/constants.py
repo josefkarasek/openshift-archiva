@@ -40,15 +40,3 @@ PROXY_CONNECTORS="""
             <disabled>false</disabled>
         </proxyConnector>
 """
-# export REMOTE1=ahoj123
-# export REMOTE2=ahoj123
-# export REMOTE3=ahoj123
-# export REMOTE4=ahoj123
-# export REMOTE5=ahoj123
-# export REMOTE6=ahoj123
-# export REMOTE7=ahoj123
-# export REMOTE8=ahoj123
-# export REMOTE9=ahoj123
-# export REMOTE10=ahoj123
-# export REMOTE11=ahoj123
-# export REMOTE12=ahoj123
