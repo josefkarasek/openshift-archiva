@@ -1,0 +1,10 @@
+{
+    "kind": "ImageStream",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "archiva-2.2.0"
+    },
+    "spec": {
+        "dockerImageRepository": "jkarasek/archiva"
+    }
+}
