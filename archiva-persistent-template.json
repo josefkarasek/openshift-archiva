@@ -218,6 +218,12 @@
                                         "protocol": "TCP"
                                     }
                                 ],
+                                "volumeMounts": [
+                                    {
+                                        "mountPath": "/opt/archiva/data",
+                                        "name": "${APPLICATION_NAME}-pvol"
+                                    }
+                                ],
                                 "env": [
                                     {
                                         "name": "ADMIN_PASSWORD",
