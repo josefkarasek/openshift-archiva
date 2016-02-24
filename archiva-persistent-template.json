@@ -7,10 +7,10 @@
             "tags": "maven,proxy,javaee,java",
             "version": "0.1"
         },
-        "name": "apache-archiva"
+        "name": "apache-archiva-persistent"
     },
     "labels": {
-        "template": "apache-archiva"
+        "template": "apache-archiva-persistent"
     },
     "parameters": [
          {
@@ -30,6 +30,12 @@
             "description": "The email address for the 'admin' account.",
             "name": "ADMIN_EMAIL",
             "value": "admin@example.com",
+            "required": true
+        },
+        {
+            "description": "Size of persistent storage for database volume.",
+            "name": "VOLUME_CAPACITY",
+            "value": "1Gi",
             "required": true
         },
         {
@@ -283,7 +289,35 @@
                                     }
                                 ]
                             }
+                        ],
+                        "volumes": [
+                            {
+                                "name": "${APPLICATION_NAME}-pvol",
+                                "persistentVolumeClaim": {
+                                    "claimName": "${APPLICATION_NAME}-claim"
+                                }
+                            }
                         ]
+                    }
+                }
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "PersistentVolumeClaim",
+            "metadata": {
+                "name": "${APPLICATION_NAME}-claim",
+                "labels": {
+                    "application": "${APPLICATION_NAME}"
+                }
+            },
+            "spec": {
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "resources": {
+                    "requests": {
+                        "storage": "${VOLUME_CAPACITY}"
                     }
                 }
             }
