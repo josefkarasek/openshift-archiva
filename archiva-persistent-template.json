@@ -204,6 +204,9 @@
                         }
                     },
                     "spec": {
+                        "nodeSelector": {
+                            "kubernetes.io/hostname": ""
+                        },
                         "terminationGracePeriodSeconds": 60,
                         "containers": [
                             {
@@ -221,7 +224,7 @@
                                 "volumeMounts": [
                                     {
                                         "mountPath": "/opt/archiva/data",
-                                        "name": "${APPLICATION_NAME}-pvol"
+                                        "name": "${APPLICATION_NAME}-data"
                                     }
                                 ],
                                 "env": [
@@ -298,32 +301,12 @@
                         ],
                         "volumes": [
                             {
-                                "name": "${APPLICATION_NAME}-pvol",
-                                "persistentVolumeClaim": {
-                                    "claimName": "${APPLICATION_NAME}-claim"
+                                "name": "${APPLICATION_NAME}-data",
+                                "hostPath": {
+                                    "path": "/mnt/maven"
                                 }
                             }
                         ]
-                    }
-                }
-            }
-        },
-        {
-            "apiVersion": "v1",
-            "kind": "PersistentVolumeClaim",
-            "metadata": {
-                "name": "${APPLICATION_NAME}-claim",
-                "labels": {
-                    "application": "${APPLICATION_NAME}"
-                }
-            },
-            "spec": {
-                "accessModes": [
-                    "ReadWriteOnce"
-                ],
-                "resources": {
-                    "requests": {
-                        "storage": "${VOLUME_CAPACITY}"
                     }
                 }
             }
