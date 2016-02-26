@@ -208,7 +208,7 @@
                         "containers": [
                             {
                                 "name": "${APPLICATION_NAME}",
-                                "image": "archiva-2.2.0:latest",
+                                "image": "archiva-2.2.0:0.1",
                                 "imagePullPolicy": "Always",
                                 
                                 "ports": [
