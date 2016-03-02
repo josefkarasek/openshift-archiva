@@ -100,7 +100,7 @@
         {
             "description": "A remote repository reference.",
             "name": "REMOTE9",
-            "value": "http://download.eng.bos.redhat.com/brewroot/repos/jb-bxms-6.2-build/latest/maven",
+            "value": "",
             "required": false
         },
         {
