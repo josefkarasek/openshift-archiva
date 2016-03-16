@@ -2,7 +2,7 @@ FROM centos:7
 MAINTAINER karasek.jose@gmail.com
 
 
-RUN yum -y install java-1.8.0-openjdk.x86_64 maven && yum clean all
+RUN yum -y install java-1.8.0-openjdk-devel.x86_64 maven lsof && yum clean all
 
 ENV ARCHIVA_VERSION 2.2.0
 ENV ARCHIVA_HOME /opt/archiva
