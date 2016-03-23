@@ -1,0 +1,198 @@
+// ------------------------------------------------------------------
+// NOTICE file corresponding to the section 4d of The Apache License,
+// Version 2.0, in this case for Archiva Web :: Application
+// ------------------------------------------------------------------
+
+Archiva Web :: Application
+Copyright 2006-2014 The Apache Software Foundation
+
+This product includes/uses software(s) developed by 'an unknown organization'
+  - AOP alliance (http://aopalliance.sourceforge.net)
+  - commons-beanutils
+  - commons-beanutils-bean-collections
+  - CLI
+  - commons-digester
+  - geronimo-spec-jta
+  - jakarta-regexp
+  - Javassist (http://www.javassist.org/)
+  - JSR-250 Common Annotations for the JavaTM Platform (http://jcp.org/aboutJava/communityprocess/final/jsr250/index.html)
+  - JDO2 API
+  - jstl
+  - jdom
+  - Neko HTML (http://nekohtml.sourceforge.net/)
+  - stax-utils (http://stax-utils.dev.java.net/)
+  - Ehcache Core (http://ehcache.sf.net/ehcache)
+  - jsr107cache (http://maven.apache.org)
+  - Java port of Mozilla charset detector (http://maven.apache.org)
+  - bcel
+  - FreeMarker (http://freemarker.org)
+  - Sonatype Nexus: Indexer (http://forge.sonatype.com/nexus-parent/nexus-indexer/)
+  - quartz
+  - StAX (http://stax.codehaus.org/)
+  - StAX API (http://stax.codehaus.org/)
+  - standard
+  - xalan
+
+This product includes/uses software(s) developed by 'Apache Software Foundation' (http://jakarta.apache.org/)
+  - HttpClient (http://jakarta.apache.org/commons/httpclient/)
+  - Velocity (http://jakarta.apache.org/velocity/)
+
+This product includes/uses software(s) developed by 'Apache Software Foundation' (http://www.apache.org)
+  - Log4j (http://logging.apache.org/log4j/docs/)
+  - Struts 2 Core (http://struts.apache.org/struts2-core/)
+  - Struts 2 Sitemesh Plugin (http://struts.apache.org/struts2-plugins/struts2-sitemesh-plugin/)
+  - Struts 2 Spring Plugin (http://struts.apache.org/struts2-plugins/struts2-spring-plugin/)
+  - XWork: Core (http://struts.apache.org/xwork-core/)
+
+This product includes/uses software(s) developed by 'Apache Software Foundation' (http://www.apache.org/)
+  - FileUpload (http://jakarta.apache.org/commons/fileupload/)
+  - Apache WebServices Common Utilities (http://ws.apache.org/commons/util)
+  - Xerces2 Java Parser (http://xerces.apache.org/xerces2-j/)
+  - XML Commons External Components XML APIs (http://xml.apache.org/commons/#external)
+
+This product includes/uses software(s) developed by 'Atlassian Pty Ltd' (http://www.atlassian.com/)
+  - Atlassian XML-RPC Binder Annotations (http://www.atlassian.com/)
+  - Atlassian XML-RPC Binder Server Components (http://www.atlassian.com/)
+  - Atlassian XML-RPC Binder Server Spring Components (http://maven.apache.org)
+  - Atlassian XML-RPC Binder Support (http://www.atlassian.com/)
+
+This product includes/uses software(s) developed by 'Codehaus' (http://www.codehaus.org)
+  - jaxen (http://jaxen.codehaus.org/)
+
+This product includes/uses software(s) developed by 'Codehaus' (http://www.codehaus.org/)
+  - Plexus Classworlds
+  - Plexus CLI (http://maven.apache.org)
+  - Plexus :: Component Annotations (http://plexus.codehaus.org/plexus-containers/plexus-component-annotations/)
+  - Plexus Component API
+  - Plexus Digest / Hashcode Components (http://plexus.codehaus.org/plexus-components/plexus-digest)
+  - Plexus Expression Evaluator Components
+  - Plexus JDO Component
+  - Plexus Quartz Component
+  - Plexus SLF4J Logger
+  - Plexus Task Queue (http://plexus.codehaus.org/plexus-components/plexus-taskqueue)
+  - Plexus Common Utilities (http://plexus.codehaus.org/plexus-utils)
+  - Plexus Velocity Component
+  - Plexus Cache API
+  - Plexus Cache Provider :: ehcache
+  - Plexus Registry Api (http://plexus.codehaus.org/plexus-components/plexus-registry/plexus-registry-api)
+  - Plexus Registry commons-configuration (http://plexus.codehaus.org/plexus-components/plexus-registry/plexus-registry-providers/plexus-registry-commons)
+  - Plexus to Spring Adapter (http://redback.codehaus.org/plexus-spring/)
+  - Redback :: Authentication API (http://redback.codehaus.org/redback-authentication/redback-authentication-api/)
+  - Redback :: Authentication Provider :: Keys (http://redback.codehaus.org/redback-authentication/redback-authentication-providers/redback-authentication-keys/)
+  - Redback :: Authentication Provider :: Ldap (http://redback.codehaus.org/redback-authentication/redback-authentication-providers/redback-authentication-ldap/)
+  - Redback :: Authentication Provider :: Users (http://redback.codehaus.org/redback-authentication/redback-authentication-providers/redback-authentication-users/)
+  - Redback :: Authorization API (http://redback.codehaus.org/redback-authorization/redback-authorization-api/)
+  - Redback :: Authorization Provider :: RBAC (http://redback.codehaus.org/redback-authorization/redback-authorization-providers/redback-authorization-rbac/)
+  - Redback :: Integration :: Common (http://redback.codehaus.org/redback-integrations/redback-common-integrations/)
+  - Redback :: JDO Common API (http://redback.codehaus.org/redback-common/redback-common-jdo/)
+  - Redback :: Ldap Common API (http://redback.codehaus.org/redback-common/redback-common-ldap/)
+  - Redback :: Configuration (http://redback.codehaus.org/redback-configuration/)
+  - Redback :: Data Management Utilities (http://redback.codehaus.org/redback-data-management/)
+  - Redback :: Key Management API (http://redback.codehaus.org/redback-keys/redback-keys-api/)
+  - Redback :: Key Management Provider :: Cached (http://redback.codehaus.org/redback-keys/redback-keys-providers/redback-keys-cached/)
+  - Redback :: Key Management Provider :: JDO (http://redback.codehaus.org/redback-keys/redback-keys-providers/redback-keys-jdo/)
+  - Redback :: Policy (http://redback.codehaus.org/redback-policy/)
+  - Redback :: RBAC Provider :: Cached (http://redback.codehaus.org/redback-rbac/redback-rbac-providers/redback-rbac-cached/)
+  - Redback :: RBAC Provider :: JDO (http://redback.codehaus.org/redback-rbac/redback-rbac-providers/redback-rbac-jdo/)
+  - Redback :: RBAC Model (http://redback.codehaus.org/redback-rbac/redback-rbac-model/)
+  - Redback :: RBAC Role Manager (http://redback.codehaus.org/redback-rbac/redback-rbac-role-manager/)
+  - Redback :: Integration :: Struts 2 Content War (http://redback.codehaus.org/redback-integrations/redback-struts2/redback-struts2-content/)
+  - Redback :: Integration :: Struts 2 Integration (http://redback.codehaus.org/redback-integrations/redback-struts2/redback-struts2-integration/)
+  - Redback :: Core System (http://redback.codehaus.org/redback-system/)
+  - Redback :: User Management API (http://redback.codehaus.org/redback-users/redback-users-api/)
+  - Redback :: Users Provider :: Cached (http://redback.codehaus.org/redback-users/redback-users-providers/redback-users-cached/)
+  - Redback :: Users Provider :: Configurable (http://redback.codehaus.org/redback-users/redback-users-providers/redback-users-configurable/)
+  - Redback :: Users Provider :: JDO (http://redback.codehaus.org/redback-users/redback-users-providers/redback-users-jdo/)
+  - Redback :: Users Provider :: LDAP (http://redback.codehaus.org/redback-users/redback-users-providers/redback-users-ldap/)
+  - Redback :: XML-RPC API (http://redback.codehaus.org/redback-xmlrpc/redback-xmlrpc-api/)
+  - Redback :: XML-RPC Services (http://redback.codehaus.org/redback-xmlrpc/redback-xmlrpc-services/)
+  - Woodstox (http://woodstox.codehaus.org)
+
+This product includes/uses software(s) developed by 'Dawid Kurzyniec' (http://www.mathcs.emory.edu/~dawidk/)
+  - Backport of JSR 166 (http://www.mathcs.emory.edu/dcl/util/backport-util-concurrent/)
+
+This product includes/uses software(s) developed by 'Joda.org' (http://www.joda.org)
+  - Joda time (http://joda-time.sourceforge.net)
+
+This product includes/uses software(s) developed by 'MetaStuff Ltd.' (http://sourceforge.net/projects/dom4j)
+  - dom4j (http://dom4j.org)
+
+This product includes/uses software(s) developed by 'ObjectWeb' (http://www.objectweb.org/)
+  - ASM Core (http://asm.objectweb.org/asm/)
+  - ASM Commons (http://asm.objectweb.org/asm-commons/)
+  - ASM Tree (http://asm.objectweb.org/asm-tree/)
+
+This product includes/uses software(s) developed by 'OpenSymphony' (http://www.opensymphony.com)
+  - OGNL - Object Graph Navigation Library (http://ognl.org)
+  - Sitemesh (http://www.opensymphony.com/sitemesh)
+
+This product includes/uses software(s) developed by 'QOS.ch' (http://www.qos.ch)
+  - JCL 1.1.1 implemented over SLF4J (http://www.slf4j.org)
+  - SLF4J API Module (http://www.slf4j.org)
+  - SLF4J LOG4J-12 Binding (http://www.slf4j.org)
+
+This product includes/uses software(s) developed by 'sourceforge' (http://sourceforge.net)
+  - eXtremeComponents (http://extremecomponents.org)
+
+This product includes/uses software(s) developed by 'Spring Framework' (http://www.springframework.org/)
+  - Spring Framework: Beans (http://www.springframework.org)
+  - Spring Framework: Context (http://www.springframework.org)
+  - Spring Framework: Context Support (http://www.springframework.org)
+  - Spring Framework: Core (http://www.springframework.org)
+  - Spring Framework: Web (http://www.springframework.org)
+
+This product includes/uses software(s) developed by 'Sun Microsystems' (http://java.sun.com/)
+  - ROME, RSS and atOM utilitiEs for Java (https://rome.dev.java.net/)
+
+This product includes/uses software(s) developed by 'The Apache Software Foundation' (http://jakarta.apache.org)
+  - Collections (http://jakarta.apache.org/commons/collections/)
+  - Commons Configuration (http://jakarta.apache.org/commons/${pom.artifactId.substring(8)}/)
+  - JXPath (http://jakarta.apache.org/commons/${pom.artifactId.substring(8)}/)
+  - Lang (http://jakarta.apache.org/commons/lang/)
+
+This product includes/uses software(s) developed by 'The Apache Software Foundation' (http://www.apache.org/)
+  - Commons Codec (http://commons.apache.org/codec/)
+  - Commons IO (http://commons.apache.org/io/)
+  - Archiva Reporting :: Artifact Reports (http://archiva.apache.org/ref/1.3.9/archiva-reporting/archiva-artifact-reports)
+  - Archiva Checksum (http://archiva.apache.org/ref/1.3.9/archiva-base/archiva-checksum)
+  - Archiva Base :: Common (http://archiva.apache.org/ref/1.3.9/archiva-base/archiva-common)
+  - Archiva Base :: Configuration (http://archiva.apache.org/ref/1.3.9/archiva-base/archiva-configuration)
+  - Archiva Consumer API (http://archiva.apache.org/ref/1.3.9/archiva-base/archiva-consumers/archiva-consumer-api)
+  - Archiva Consumers :: Core Consumers (http://archiva.apache.org/ref/1.3.9/archiva-base/archiva-consumers/archiva-core-consumers)
+  - Archiva Database (http://archiva.apache.org/ref/1.3.9/archiva-database)
+  - Archiva Consumers :: Database Consumers (http://archiva.apache.org/ref/1.3.9/archiva-base/archiva-consumers/archiva-database-consumers)
+  - Archiva Base :: Dependency Graph (http://archiva.apache.org/ref/1.3.9/archiva-base/archiva-dependency-graph)
+  - Archiva Base :: Indexer (http://archiva.apache.org/ref/1.3.9/archiva-base/archiva-indexer)
+  - Archiva Consumers :: Lucene Consumers (http://archiva.apache.org/ref/1.3.9/archiva-base/archiva-consumers/archiva-lucene-consumers)
+  - Archiva Base :: Model (http://archiva.apache.org/ref/1.3.9/archiva-base/archiva-model)
+  - Archiva Base :: Policies (http://archiva.apache.org/ref/1.3.9/archiva-base/archiva-policies)
+  - Archiva Base :: Proxy (http://archiva.apache.org/ref/1.3.9/archiva-base/archiva-proxy)
+  - Archiva Reporting :: Report Manager (http://archiva.apache.org/ref/1.3.9/archiva-reporting/archiva-report-manager)
+  - Archiva Repository Interface Layer (http://archiva.apache.org/ref/1.3.9/archiva-base/archiva-repository-layer)
+  - Archiva Web :: RSS (http://archiva.apache.org/ref/1.3.9/archiva-web/archiva-rss)
+  - Archiva Base :: Scheduled Tasks (http://archiva.apache.org/ref/1.3.9/archiva-scheduled)
+  - Archiva Web :: Security Configuration (http://archiva.apache.org/ref/1.3.9/archiva-web/archiva-security)
+  - Archiva Consumers :: GPG Signature Consumers (http://archiva.apache.org/ref/1.3.9/archiva-base/archiva-consumers/archiva-signature-consumers)
+  - Archiva Web :: WebDAV (http://archiva.apache.org/ref/1.3.9/archiva-web/archiva-webdav)
+  - Archiva Base :: XML Tools (http://archiva.apache.org/ref/1.3.9/archiva-base/archiva-xml-tools)
+  - Archiva Web :: XML-RPC API (http://archiva.apache.org/ref/1.3.9/archiva-web/archiva-xmlrpc/archiva-xmlrpc-api)
+  - Archiva Web :: XML-RPC Security (http://archiva.apache.org/ref/1.3.9/archiva-web/archiva-xmlrpc/archiva-xmlrpc-security)
+  - Archiva Web :: XML-RPC Services (http://archiva.apache.org/ref/1.3.9/archiva-web/archiva-xmlrpc/archiva-xmlrpc-services)
+  - Commons Lang (http://commons.apache.org/lang/)
+  - Jackrabbit JCR Commons (http://jackrabbit.apache.org/jackrabbit-jcr-commons/)
+  - Jackrabbit WebDAV Library (http://jackrabbit.apache.org/jackrabbit-webdav/)
+  - Lucene Core (http://lucene.apache.org/java/lucene-core)
+  - Lucene Queries (http://lucene.apache.org/java/lucene-contrib/lucene-queries)
+  - Maven Artifact (http://maven.apache.org/maven-artifact)
+  - Maven Artifact Manager (http://maven.apache.org/maven-artifact-manager)
+  - Maven Model (http://maven.apache.org/maven-model)
+  - Maven Repository Metadata Model (http://maven.apache.org/maven-repository-metadata)
+  - Maven Archetype Common (http://maven.apache.org/maven-archetype/archetype-common/)
+  - Maven Wagon File Provider (http://maven.apache.org/wagon/wagon-providers/wagon-file)
+  - Maven Wagon Lightweight HTTP Provider (http://maven.apache.org/wagon/wagon-providers/wagon-http-lightweight)
+  - Maven Wagon HTTP Shared Library (http://maven.apache.org/wagon/wagon-providers/wagon-http-shared)
+  - Maven Wagon API (http://maven.apache.org/wagon/wagon-provider-api)
+  - Apache XML-RPC Common Library (http://ws.apache.org/xmlrpc/xmlrpc-common/)
+  - Apache XML-RPC Server Library (http://ws.apache.org/xmlrpc/xmlrpc-server/)
+
+

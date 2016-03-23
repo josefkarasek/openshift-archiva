@@ -1,0 +1,45 @@
+// ------------------------------------------------------------------
+// NOTICE file corresponding to the section 4d of The Apache License,
+// Version 2.0, in this case for Apache Archiva
+// ------------------------------------------------------------------
+
+Apache Archiva
+Copyright 2006-2014 The Apache Software Foundation
+
+This product includes/uses software(s) developed by 'an unknown organization'
+  - Eclipse JDT Core (http://www.eclipse.org/jdt/)
+
+This product includes/uses software(s) developed by 'Apache Software Foundation' (http://db.apache.org/)
+  - Derby Engine (http://db.apache.org/derby/)
+
+This product includes/uses software(s) developed by 'Apache Software Foundation' (http://www.apache.org/)
+  - XML Commons External Components XML APIs (http://xml.apache.org/commons/#external)
+
+This product includes/uses software(s) developed by 'Mort Bay Consulting' (http://www.mortbay.com)
+  - Jetty Server (http://www.eclipse.org/jetty/jetty-parent/project/modules/jetty)
+  - Jetty Naming (http://www.eclipse.org/jetty/jetty-parent/project/jetty-naming)
+  - Jetty Plus (http://www.eclipse.org/jetty/jetty-parent/project/jetty-plus)
+  - Jetty Utilities (http://www.eclipse.org/jetty/jetty-parent/project/jetty-util)
+  - Glassfish :: Jasper JSP 2.1 (http://jetty.mortbay.org/jetty-jsp/jsp-2.1-glassfish)
+  - Glassfish Jasper (http://www.eclipse.org/jetty/jetty-parent/project/jsp-2.1-jetty)
+  - Glassfish :: Jasper API JSP 2.1 (http://jetty.mortbay.org/jetty-jsp/jsp-api-2.1-glassfish)
+  - Servlet Specification API (http://jetty.mortbay.org/servlet-api)
+  - Jetty start jar (http://www.eclipse.org/jetty/jetty-parent/project/modules/start)
+
+This product includes/uses software(s) developed by 'Sun Microsystems' (http://www.sun.com/)
+  - JavaBeans Activation Framework (JAF) (http://java.sun.com/products/javabeans/jaf/index.jsp/activation)
+  - JavaMail API (https://glassfish.dev.java.net/javaee5/mail/mail)
+
+This product includes/uses software(s) developed by 'The Apache Software Foundation' (http://jakarta.apache.org)
+  - Collections (http://jakarta.apache.org/commons/collections/)
+  - Commons DBCP (http://jakarta.apache.org/commons/dbcp/)
+  - Commons Pool (http://jakarta.apache.org/commons/pool/)
+
+This product includes/uses software(s) developed by 'The Apache Software Foundation' (http://www.apache.org/)
+  - Ant (http://ant.apache.org/)
+  - Geronimo :: Java Transaction API Specification (http://geronimo.apache.org/)
+  - Archiva Documentation (http://archiva.apache.org/docs/1.3.9/)
+  - Archiva Web :: Application (http://archiva.apache.org/ref/1.3.9/archiva-web/archiva-webapp)
+  - Xerces (http://xerces.apache.org/)
+
+
