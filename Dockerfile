@@ -10,6 +10,7 @@ ENV ARCHIVA_HOME /opt/archiva
 RUN groupadd -r archiva -g 433 && useradd -u 431 -r -g archiva -d /opt/archiva -s /sbin/nologin -c "Archiva user" archiva
 
 ADD apache-archiva-2.2.1-SNAPSHOT /opt/archiva
+ADD archiva.xml $ARCHIVA_HOME/conf/archiva.xml
 ADD scripts /opt/archiva/bin/scripts
 
 RUN chown -R archiva:0 /opt/archiva
