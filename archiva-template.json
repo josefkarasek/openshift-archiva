@@ -52,43 +52,43 @@
         {
             "description": "A remote repository reference.",
             "name": "REMOTE2",
-            "value": "",
+            "value": "https://repo.fusesource.com/nexus/content/groups/ea",
             "required": false
         },
         {
             "description": "A remote repository reference.",
             "name": "REMOTE3",
-            "value": "",
+            "value": "https://repo.fusesource.com/nexus/content/groups/public",
             "required": false
         },
         {
             "description": "A remote repository reference.",
             "name": "REMOTE4",
-            "value": "",
+            "value": "http://origin-repository.jboss.org/nexus/content/groups/ea",
             "required": false
         },
         {
             "description": "A remote repository reference.",
             "name": "REMOTE5",
-            "value": "",
+            "value": "http://repository.jboss.org/nexus/content/groups/public",
             "required": false
         },
         {
             "description": "A remote repository reference.",
             "name": "REMOTE6",
-            "value": "",
+            "value": "http://maven.repository.redhat.com/earlyaccess/all",
             "required": false
         },
         {
             "description": "A remote repository reference.",
             "name": "REMOTE7",
-            "value": "",
+            "value": "http://maven.repository.redhat.com/techpreview/all",
             "required": false
         },
         {
             "description": "A remote repository reference.",
             "name": "REMOTE8",
-            "value": "",
+            "value": "http://repository.engineering.redhat.com/nexus/content/repositories/jboss-qa-releases",
             "required": false
         },
         {
