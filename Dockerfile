@@ -16,7 +16,7 @@ ADD scripts /opt/archiva/bin/scripts
 RUN chown -R archiva:0 /opt/archiva
 RUN chmod 774 -R /opt/archiva
 
-USER 431
+USER 0
 
 WORKDIR $ARCHIVA_HOME
 
